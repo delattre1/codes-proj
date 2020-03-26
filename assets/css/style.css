@@ -125,7 +125,6 @@ text: 303841
   font-family: 'Open Sans', sans-serif;
   width: 10rem;
   height: 2rem;
-
 }
 .meio {
   margin-top: 1.5rem;
@@ -140,56 +139,39 @@ text: 303841
 
 /* css index rapagao vai até aqui  */
 
-/* começo css categoria dani/ timas  */
-
-
-.container {
-  padding: 1rem;
+@media (max-width: 400px){  
+  .header {
   display: flex;
-  margin: 0 auto;
-  width: 55%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  }
+
+  .main-title{
+  display: flex;
   flex-wrap: wrap;
-}
-
-.item-list {
-  display: flex;
-  margin: 0 auto;
-  align-items: flex-end;
-  flex-direction: row;
-}
-
-.image-list {
-  max-width: 45%;
-  padding-right: 2rem;
-  padding-bottom: 1rem;
-
-}
-.title-list {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100%;
-  font-size: 1.25rem;
-}
-
-.imgp{
-  max-width: 50%;
-}
-
-.contimg{
   text-align: center;
-}
+  margin-left: 0rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  }
 
-.header1 {
-  border: 0.2rem solid;
-  border-color: #ff5722;
-  margin: 0 auto;
-  padding: 0.25rem;
+  .text{
+    width: 90%;
+  }
+
+
+
+   .nav-cat-opcoes {
+  display: grid;
+  grid-column: initial ;
+  font-family: 'Martel', serif;
+  padding: 0.5rem;
+  }
+
+  .nav-cat-sup {
   text-align: center;
-}
+  }
 
-.bgi {
-  justify-content: center;
+  
 }
-
-/* css categoria daniel timas vai até aqui  */
