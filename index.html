@@ -6,9 +6,10 @@
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/index.css" rel="stylesheet">  
   <link href="https://fonts.googleapis.com/css?family=Martel&display=swap" rel="stylesheet">
-
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <script src="assets/js/codes.js"></script>
+  <script src="assets/js/index.js"></script>
   <meta charset="utf-8"/>
 </head>
 
@@ -20,8 +21,6 @@
   </header>
   
   <main>
-
-
     <p>
       <img src="assets/img/categorias.jpeg" alt="imagem dizendo \" class = "img">
     </p>
@@ -30,20 +29,16 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum impedit quidem nesciunt odit culpa saepe pariatur a incidunt voluptas? Quasi adipisci, placeat culpa similique optio aspernatur ad minima quaerat cumque.
     </p>
 
-    <ul class = "meio">
-      <li class = "opcoes text azul-maisescuro"><a href="categoria.html" class="gelo-texto">Matematica</a></li>
-      <li class = "opcoes text azul-maisescuro"><a href="categoria.html" class="gelo-texto">FabLab</a></li>
-      <li class = "opcoes text azul-maisescuro"><a href="categoria.html" class="gelo-texto">Empreendedorismo</a></li>
-      <li class = "opcoes text azul-maisescuro"><a href="categoria.html" class="gelo-texto">Física</a></li>
-      <li class = "opcoes text azul-maisescuro"><a href="categoria.html" class="gelo-texto">Programação</a></li>
+    <ul class="meio">
+      {{#each portfolio}}
+        <li class = "opcoes text azul-maisescuro"><a href="categoria.html" class="gelo-texto">{{@key}}</a></li>
+      {{/each}}
     </ul>
     
     <h2 class="nome azul-maisescurotexto">
       Janiel Soarez
     </h2>
 
-  </main>
-  
+  </main>  
 </body>
-
 </html>
