@@ -1,14 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // let params = coDesExtract()
-  // let value = params['key']
-  let db = coDesConnect('https://codes-daniel.firebaseio.com')
+  let params = coDesExtract()
+  let value = params['key']
+  let value2 = document.querySelector('.batatinha')
+  value2.href = "projeto.html?cat="+value+"&pro={{@key}}"
+  value2.src  = "assets/img/{{key}}.jpg"
+  console.log(value2)
+  let db = coDesConnect('https://entrega1codes.firebaseio.com/')
   db.download('/', function(data) {
     
     context = data
     coDesReplace('.nav-cat-sup', context)
-    // coDesReplace('title', context['biblioteca'][value])
-    // coDesReplace('.menu-list', context)
-    // coDesReplace('.call', context['biblioteca'][value])
-    // coDesReplace('.book-list', context['biblioteca'][value])
+
+    console.log(value)
+
+    context = data['portfolio'][value]
+    console.log(context)
+    coDesReplace('title', context)
+    coDesReplace('.k1', context)
+    coDesReplace('.container', context)
+
   })
 })
+
+

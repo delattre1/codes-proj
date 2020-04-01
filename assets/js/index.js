@@ -1,20 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
-  let db = coDesConnect('https://codes-daniel.firebaseio.com')
+  let db = coDesConnect('https://entrega1codes.firebaseio.com/')
 
   db.download('/', function(data) {
     context = data
-
-    for (let key in data) {
-      console.log(data[key])
-    }
+    console.log(data)
     coDesReplace('.meio', context)
     // coDesReplace('.section-list', context)
-
   })
 })
-
-
-
 
 
 // secao.html?key={{@key}}
