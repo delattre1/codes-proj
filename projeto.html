@@ -5,6 +5,7 @@
   <link href="assets/css/reset.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
   <link href="assets/css/styleprojeto.css" rel="stylesheet">
+  <link href="assets/css/bar.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Martel&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <script src="assets/js/codes.js"></script>
@@ -15,17 +16,22 @@
 
 <body class="bgp gelo">
   <header class="header azul-maisescuro">
-    <h2 class="main-title-nav gelo-texto">
-      Portfólio de Janiel Soarez
-    </h2>
-
-    <nav>
+    <div class="nav-toggle">
+      <div class="nav-toggle-bar"></div>
+    </div>
+    <nav class="nav">
       <ul class="nav-cat-sup">
         {{#each portfolio}}
           <li class = "nav-cat-opcoes text laranja"><a href="categoria.html?key={{@key}}" class="nav-link">{{this.categoria}}</a></li>
         {{/each}}
       </ul>
     </nav>
+
+    <h2 class="main-title-nav gelo-texto">
+      Portfólio de Janiel Soarez
+    </h2>
+
+    
   </header>
 
   <main>
@@ -55,36 +61,32 @@
                   Equipe
                 </h2>
               </div>
+
               <div class="equipe-nomes">
                 <div class = "equipe-membros-1">
-                  <div class="img-nome">
-                    <img src="assets/img/janiel1.jpeg" alt="Janiel Photo by Bhavya Shah on Unsplash" class="img-person">
-                    <p class="text nome azul-maisescurotexto">Janiel</p>
-                    <!-- Photo by Bhavya Shah on Unsplash -->
-                  </div>
-                  <div class="img-nome">
-                    <img src="assets/img/dani1.jpeg" alt="Daniel" class="img-person" >
-                    <p class="text nome azul-maisescurotexto">Daniel</p>
-                  </div>
-                  <div class="img-nome">
-                    <img src="assets/img/timao1.jpeg" alt="Guilherme" class="img-person">
-                    <p class="text nome azul-maisescurotexto">Guilherme</p>
-                  </div>
-
+                  <ul class="k5">
+                    {{#each equipe}}
+                      <li>
+                        <div class="img-nome">
+                          <img src="assets/img/{{@key}}.jpeg" alt="imagem de uma pessoa" class="img-person">
+                          <p class="text nome azul-maisescurotexto ">{{this}}</p>
+                        </div>
+                      </li>
+                    {{/each}}
+                  </ul>
                 </div>
+
                 <div class = "equipe-membros-2">
-                  <div class="img-nome">
-                    <img src="assets/img/babi1.jpeg" alt="Barbara" class="img-person">
-                    <p class="text nome azul-maisescurotexto"> Barbara</p>
-                  </div>
-                  <div class="img-nome">
-                    <img src="assets/img/gi1.jpeg" alt="Giovanna" class="img-person">
-                    <p class="text nome azul-maisescurotexto"> Giovanna</p>
-                  </div>
-                  <div class="img-nome">
-                    <img src="assets/img/rafa1.jpeg" alt="Rafael" class="img-person">
-                    <p class="text nome azul-maisescurotexto"> Rafael</p>
-                  </div>
+                  <ul class="k6">
+                    {{#each equipe2}}
+                      <li>
+                        <div class="img-nome">
+                          <img src="assets/img/{{@key}}.jpeg" alt="imagem de uma pessoa" class="img-person">
+                          <p class="text nome azul-maisescurotexto ">{{this}}</p>
+                        </div>
+                      </li>
+                    {{/each}}
+                  </ul>
                 </div>
               </div>
             </div>
@@ -101,12 +103,13 @@
               </p>
             </div>
           </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="descricao-proj">
-      <h2 class="title-descricao title azul-maisescurotexto">
+      <h2 class="title-descricao azul-maisescurotexto">
         Descrição
       </h2>
       <p class="k3 text azul-maisescurotexto">
@@ -114,5 +117,25 @@
       </p>
     </div>
   </main>
+  <script>
+    (function() {
+  
+      var hamburger = {
+        navToggle: document.querySelector('.nav-toggle'),
+        nav: document.querySelector('nav'),
+    
+        doToggle: function(e) {
+          e.preventDefault();
+          this.navToggle.classList.toggle('expanded');
+          this.nav.classList.toggle('expanded');
+        }
+      };
+    
+      hamburger.navToggle.addEventListener('click', function(e) { hamburger.doToggle(e); });
+    }());
+  </script>
 </body>
 </html>
+
+<!-- essa parte é a animação do fechamento, mas com ela ele n segue o link 
+hamburger.nav.addEventListener('click', function(e) { hamburger.doToggle(e); }); -->
